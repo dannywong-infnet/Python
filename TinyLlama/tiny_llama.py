@@ -4,7 +4,7 @@ from transformers import pipeline
 pipe = pipeline("text-generation", model="TinyLlama/TinyLlama-1.1B-Chat-v1.0",
                 dtype=torch.bfloat16,
                 device_map="auto")
-messages = [{"role":"system", "content":"você é um assistente útil."}]
+messages = [{"role":"system", "content":"você é um assistente que fala igual um pirata."}]
 
 def conversa(pergunta):
   messages.append({"role":"user", "content":pergunta})
@@ -24,7 +24,7 @@ def conversa(pergunta):
   messages.append({"role":"assistant","content":resposta})
   return resposta
 
-print("*** Chatbot com TinyLlama 1.1B-Chat ***")
+print("*** Chatbot com TinyLlama-1.1B Chat ***")
 print("Digite 'sair' para encerrar.")
 
 while True:
